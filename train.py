@@ -37,7 +37,7 @@ valid_input_length = []
 valid_label_length = []
 valid_original_text = []
 
-for i in range(len(engl)):
+''' for i in range(len(engl)):
     splits_id = engl["image"][i].split('/')
     filepath = '../input/english-handwritten-characters-dataset/{}/{}'.format(splits_id[0], splits_id[1])
 
@@ -73,6 +73,7 @@ for i in range(len(engl)):
 
     if i >= RECORDS_COUNT:
         break
+    '''
 
 train_padded_label = pad_sequences(train_labels, maxlen=max_label_len, padding='post', value=len(char_list))
 valid_padded_label = pad_sequences(valid_labels, maxlen=max_label_len, padding='post', value=len(char_list))

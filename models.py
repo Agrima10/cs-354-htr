@@ -5,6 +5,8 @@ from tensorflow.keras import backend as K
 def Model1():
     # input with shape of height=32 and width=128 
     inputs = Input(shape=(32,128,1))
+    char_list = "!\"#&'()*+,-./0123456789:;?ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+
 
     # convolution layer with kernel size (3,3)
     conv_1 = Conv2D(64, (3,3), activation = 'relu', padding='same')(inputs)
