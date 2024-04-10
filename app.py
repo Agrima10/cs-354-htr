@@ -40,7 +40,7 @@ tf_keras_backend.image_data_format()
 
 app = Flask(__name__)
 
-filepath='sgdo-25000r-25e-18074t-10b-2007v.hdf5'
+filepath='sgdo-50000r-30e-18074t-2007v.hdf5'
 
 def ctc_lambda_func(args):
     y_pred, labels, input_length, label_length = args
