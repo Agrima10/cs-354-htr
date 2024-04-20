@@ -9,25 +9,25 @@ This project proposes a hybrid approach to address these challenges, aiming to e
 
 1. Clone the repository:
 
-git clone https://github.com/Agrima10/cs-354-htr.git
+```git clone https://github.com/Agrima10/cs-354-htr.git```
 
 2. Navigate to project directory:
 
-cd CS-354-HTR
+```cd CS-354-HTR```
 
 3. Install dependencies:
 
-pip install -r requirements.txt
+```pip install -r requirements.txt```
 
 ## IAM dataset:
 
-The dataset used for this project can be downloaded from here: https://www.kaggle.com/datasets/bigkizd/iam-dataset
+```The dataset used for this project can be downloaded from here: https://www.kaggle.com/datasets/bigkizd/iam-dataset```
 
 ## Preprocessing Data:
 
 After downloading the dataset, preprocess it by:
 
-python preprocess.py
+```python preprocess.py```
 
 This is going to save preprocessed np arrays in the form of .npy files which can be used later for training and testing.
 
@@ -35,7 +35,7 @@ This is going to save preprocessed np arrays in the form of .npy files which can
 
 After the data is processed, the model can be trained using:
 
-python main.py
+```python main.py```
 
 The number of epochs and batch size can be customized. This also generates a training loss vs testing loss and a training accuracy vs testing accuracy graph. In the end the model is saved as a .hdf5 file which can be used later.
 
@@ -43,7 +43,7 @@ The number of epochs and batch size can be customized. This also generates a tra
 
 Jaro has been used to calculate the word error rate. Update the path for the saved model in test.py and run it using:
 
-python test.py
+```python test.py```
 
 This will generate jaro test scores and also demonstrate how the model works on randomly selected images from the testinng dataset.
 
@@ -51,7 +51,7 @@ This will generate jaro test scores and also demonstrate how the model works on 
 
 Run the flask application with:
 
-python app.py
+```python app.py```
 
 Currently it uses the already saved model, but the path can be customized to use any desired model.
 
