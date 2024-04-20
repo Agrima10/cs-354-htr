@@ -5,7 +5,7 @@ Handwritten Text Recognition (HTR) is a challenging domain within computer visio
 
 This project proposes a hybrid approach to address these challenges, aiming to enhance the accuracy of handwritten text recognition from images. By integrating Convolutional Neural Networks (CNN) and Bidirectional Long Short-Term Memory (BiLSTM) with a Connectionist Temporal Classification (CTC) decoder, the proposed model achieves substantial improvement in accuracy.
 
-##Installation
+## Installation
 
 1. Clone the repository:
 
