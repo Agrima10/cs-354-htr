@@ -176,9 +176,11 @@ valid_label_length = np.asarray(valid_label_length)
 train_images_path = 'train_images.npy'
 train_input_length_path = 'train_input_length.npy'
 train_label_length_path = 'train_label_length.npy'
+train_original_text_path = 'train_original_text.npy'
 valid_images_path = 'valid_images.npy'
 valid_input_length_path = 'valid_input_length.npy'
 valid_label_length_path = 'valid_label_length.npy'
+valid_original_text_path = 'valid_original_text.npy'
 train_padded_label_path = 'train_padded_label.npy'
 valid_padded_label_path = 'valid_padded_label.npy'
 
@@ -191,5 +193,8 @@ np.save(valid_input_length_path, valid_input_length)
 np.save(valid_label_length_path, valid_label_length)
 np.save(train_padded_label_path, train_padded_label)
 np.save(valid_padded_label_path, valid_padded_label)
+np.save(valid_original_text_path, valid_original_text)
+np.save(train_original_text_path, train_original_text)
+
 
 print("Arrays saved successfully.")

@@ -127,7 +127,7 @@ loss_out = Lambda(ctc_lambda_func, output_shape=(1,), name='ctc')([outputs, the_
 #model to be used at training time
 model = Model(inputs=[inputs, the_labels, input_length, label_length], outputs=loss_out)
 
-batch_size = 100
+batch_size = 1000
 epochs = 1
 e = str(epochs)
 optimizer_name = 'sgd'
@@ -153,3 +153,35 @@ history = model.fit(x=[train_images, train_padded_label, train_input_length, tra
                     callbacks=callbacks_list)
 
 model.save(filepath='./saved_model.keras')
+
+# Plot accuracy and loss
+def plotgraph(epochs, acc, val_acc):
+    # Plot training & validation accuracy values
+    plt.plot(epochs, acc, 'b')
+    plt.plot(epochs, val_acc, 'r')
+    plt.xlabel('Epoch')
+    plt.legend(['Train', 'Val'], loc='upper left')
+    plt.show()
+
+acc = history.history['accuracy']
+val_acc = history.history['val_accuracy']
+loss = history.history['loss']
+val_loss = history.history['val_loss']
+epochs = range(1, len(loss) + 1)
+
+plotgraph(epochs, loss, val_loss)
+plotgraph(epochs, acc, val_acc)
+
+# Get the index of the best model
+minimum_val_loss = np.min(history.history['val_loss'])
+best_model_index = np.where(history.history['val_loss'] == minimum_val_loss)[0][0]
+
+best_loss = str(history.history['loss'][best_model_index])
+best_acc = str(history.history['accuracy'][best_model_index])
+best_val_loss = str(history.history['val_loss'][best_model_index])
+best_val_acc = str(history.history['val_accuracy'][best_model_index])
+
+print("Best Loss:", best_loss)
+print("Best Accuracy:", best_acc)
+print("Best Validation Loss:", best_val_loss)
+print("Best Validation Accuracy:", best_val_acc)
